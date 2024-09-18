@@ -19,6 +19,9 @@ app.use(express.json());
 app.use('/api/auth', authRoutes);
 app.use('/api/grievances', grievanceRoutes);
 app.use('/api/users', userRoutes);
+app.get('/', (req, res) => {
+  res.send('Server is up and running!');
+});
 
 // Route to handle grievance submission
 app.post('/api/grievances', async (req, res) => {
